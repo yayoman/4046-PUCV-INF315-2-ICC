@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+
+  <body>
+
+    <script type="text/javascript">
+      var digitos = prompt("INGRESE SU RUT SIN PUNTOS,SIN GUIÓN Y SIN DÍGITO VERIFICADOR:");
+      var dv = prompt("INGRESE EL DÍGITO VERIFICADOR DE SU RUT:");
+
+      digitos = digitos.split("");
+
+      var resultado = validarDV(digitos, dv);
+
+      if (resultado) {
+        alert("El DÍGITO VERIFICADOR ES CORRECTO");
+      } else {
+        alert("El DÍGITO VERIFICADOR ES INCORRECTO");
+      }
+
+
+      function validarDV(digitos,digitoVerificadorAComprobar) {
+
+        var serie = []; //La inicializo vacía pues depende del largo de "digitos"
+
+        switch (digitos.length) {
+          case 6:
+            serie = [7,6,5,4,3,2];
+            break;
+          case 7:
+            serie = [2,7,6,5,4,3,2];
+            break;
+          case 8:
+            serie = [3,2,7,6,5,4,3,2];
+            break;
+          case 9:
+            serie = [4,3,2,7,6,5,4,3,2];
+            break;
+          default:
+            alert ("HA OCURRIDO UN ERROR, EL LARGO DEL RUT DEBE SER ENTRE 6 Y 9.");
+            return false;
+            break;
+        }
+
+        var suma = 0;
+        //Itero:
+        for (var i = 0; i < digitos.length; i++) {
+          suma = suma + digitos[i] * serie[i];
+        }
+
+        var parteEntera = parseInt(suma / 11);
+        var resto = suma - (11 *  parteEntera);
+        var dv = 11 - resto;
+
+        switch (dv) {
+          case 11:
+            dv = 0;
+            break;
+          case 10:
+            //TODO: ¿Qué pasa con las mayúsculas?
+            dv = "k";
+            break;
+        }
+
+        //Comparación
+        if (dv == digitoVerificadorAComprobar) return true;
+        return false;
+      }
+
+
+    </script>
+
+  </body>
+</html>

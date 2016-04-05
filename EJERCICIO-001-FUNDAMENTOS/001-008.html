@@ -1,0 +1,26 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+
+  <script type="text/javascript">
+
+    var toneladasARepartir = prompt("CANTIDAD DE TONELADAS A REPARTIR:");
+    toneladasARepartir = parseInt(toneladasARepartir);
+
+    //Error
+    if (isNaN(toneladasARepartir)){
+      alert("HA OCURRIDO UN ERROR.");
+    } else {
+       alert("SE NECESITAN: " + calcularCantidadDeCamiones(toneladasARepartir, 0) + " CAM 25 TON");
+    }
+
+    function calcularCantidadDeCamiones(toneladasARepartir, capacidadDeCargaPorCamion) {
+      var data = toneladasARepartir / capacidadDeCargaPorCamion;
+      return data;
+    }
+
+  </script>
+
+</html>

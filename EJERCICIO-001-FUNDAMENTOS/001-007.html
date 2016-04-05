@@ -1,0 +1,25 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+
+  <script type="text/javascript">
+
+    var numero = prompt("Ingrese un número");
+    numero = parseInt(numero);
+
+    //Error
+    if (isNaN(numero)){
+      alert("HA OCURRIDO UN ERROR.");
+    } else {
+      alert("EL CUADRADO ES " + calcularCuadrado(numero));
+    }
+
+    function calcularCuadrado(numero) {
+      return numero * numero;
+    }
+
+  </script>
+
+</html>

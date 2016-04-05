@@ -1,0 +1,31 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <script type="text/javascript" src="js/rut.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  </head>
+
+  <body>
+    <div style="text-align: center;">
+       <h1>Ejercicio #3</h1>
+       <h2>V3: Html y Jquery</h2>
+
+       <form class="pure-form">
+        <fieldset>
+          <p>Ingrese su Rut sin dígito verificador a continuación y presione el botón Obtener dv</p>
+          <input type="input" id="input_digito" placeholder="Rut sin dv">
+          <button type="button" id="button_rut" class="pure-button pure-button-primary">Obtener dv</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      $('#button_rut').bind('click', function () {
+        var resultado = generaDV($('#input_digito').val());
+        alert(resultado);
+      });
+    </script>
+  </body>
+</html>

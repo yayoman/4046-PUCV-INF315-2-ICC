@@ -1,0 +1,26 @@
+<html>
+
+  <script type="text/javascript">
+
+  var cantidadDeIteracionesRestantes = 10
+  var primerNumero = 0;
+  var segundoNumero = 1;
+  var resultado = 0;
+  while(cantidadDeIteracionesRestantes > 0) {
+     resultado = primerNumero + segundoNumero;
+     primerNumero = segundoNumero;
+     segundoNumero = resultado;
+     imprimir(resultado);
+     cantidadDeIteracionesRestantes =  cantidadDeIteracionesRestantes - 1
+  }
+
+  function imprimir(mensaje) {
+    alert(mensaje);
+  }
+
+
+
+
+  </script>
+
+</html>

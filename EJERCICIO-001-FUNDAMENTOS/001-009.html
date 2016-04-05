@@ -1,0 +1,26 @@
+
+
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+
+  <script type="text/javascript">
+    //CASO DE PRUEBA 1
+    var resultado = calcularCantidadDeCamiones(0,-1,1,3,-2);
+    if (resultado == false) alert("Ha ocurrido un error.");
+    alert("SON NECESARIOS " + resultado + " CAMIONES.");
+
+    function calcularCantidadDeCamiones(x,y,z,capacidad,densidad) {
+      if (capacidad <= 0 ) return false;
+      if (x < 0 ) return false;
+      if (y < 0 ) return false;
+      if (z < 0 ) return false;
+      var cantidadDeCamiones =  1;
+      //Hacer el cálculo - Tomar las providencias del caso
+      return ((x*y*z) / capacidad);
+    }
+
+  </script>
+</html>
