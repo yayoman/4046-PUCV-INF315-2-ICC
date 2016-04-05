@@ -1,0 +1,46 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <script type="text/javascript" src="js/prestamos.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  </head>
+
+  <body>
+    <div>
+       <h1 style="text-align: center;">Ejercicio #4</h1>
+       <h2 style="text-align: center;">Cálculo de prestamos con interés</h2>
+
+       <div style="margin-left:30%;">
+         <form class="pure-form pure-form-stacked">
+          <fieldset>
+
+            <label for="input_monto">Monto:</label>
+            <input type="input" id="input_monto" name="input_monto" placeholder="Monto del préstamo">
+
+            <br/>
+            <label for="input_plazo_meses">Plazo (en meses)</label>
+            <input type="input" id="input_plazo_meses" name="input_plazo_meses" placeholder="Plazo en meses">
+
+            <br/>
+            <label for="input_interes_mensual">Interes mensual</label>
+            <input type="input" id="input_interes_mensual" name="input_interes_mensual" placeholder="Interes mensual">
+
+            <br/>
+            <br/>
+            <button type="button" id="button_simular" class="pure-button pure-button-primary">Obtener simulación</button>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+      $('#button_simular').bind('click', function () {
+        var resultado = simularCredito($('#input_monto').val(), $('#input_plazo_meses').val() , $('#input_interes_mensual').val());
+        alert("LA CUOTA MENSUAL DEL CRÉDITO ES: " + resultado);
+      });
+    </script>
+  </body>
+</html>
